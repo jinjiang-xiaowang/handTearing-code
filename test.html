@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function inherit(ChildrenClass,SuperClass){
+    ChildrenClass.prototype=Object.create(SuperClass.prototype)
+    ChildrenClass.prototype.constructor=ChildrenClass;
+}
+function SuperClass(){
+    this.propA='a'
+}
+function ChildrenClass(){
+   SuperClass.call(this)
+   this.propB='b'
+}
+inherit(ChildrenClass,SuperClass)
+
+function A(name){
+    this.name=name;
+}
+A.prototype.getName=function(){
+    console.log(this.name)
+}
+
+</script>
