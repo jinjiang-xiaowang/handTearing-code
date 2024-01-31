@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>寄生组合继承</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function Person(name){
+        this.name=name
+    }
+    Person.prototype.sayHi=function(){
+        console.log(`'niaho',${this.name}`)
+    }
+    function Student(name){
+        Person.call(this,name)
+    }
+    const prototype=Object.create(Person.prototype,{
+        constructor:{
+            value:Student
+        }
+    })
+    Student.prototype=prototype
+    const s=new Student('123')
+    
+</script>

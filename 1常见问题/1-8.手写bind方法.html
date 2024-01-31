@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bind</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    Function.prototype.MyBind=function(thisArg,...arr1){
+        return (...arr2)=>{
+            this.call(thisArg,...arr1,...arr2)
+        }
+        
+    }
+    const person={
+        name:'1'
+    }
+    function fn(num1,num2,num3){
+        console.log(this)
+        console.log(num1,num2,num3)
+    }
+    const newfn=fn.MyBind(person,1)
+    newfn(2,3)
+
+</script>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this问题</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 1.全局环境 严格or非严格=>window
+    // console.log(this)
+    // 'use strict'
+    // console.log(this)
+    // 2.函数直接调用
+    // function fn(){
+    //     console.log(this)
+    // }
+    // fn() //window
+    // function fn(){
+    //     'use strict'
+    //     console.log(this)
+    // }
+    //  fn()    //undefined
+    // 3.对象方法调用 严格or非严格=>调用者
+    // let obj={
+    //     name:'1',
+    //     fn(){
+    //         'use strict'
+    //         console.log(this)
+    //     }
+    // }
+    // obj.fn() //调用者
+    
+    // 2.修改this指向
+        // 直接修改 apply(传入数组) call
+    // function fn(num1,num2){
+    //     console.log(this)
+    //     console.log(num1,num2)
+    // }
+    // const person={
+    //     name:'1'
+    // }
+    // fn.apply(person,[2,3])
+    // fn.call(person,2,3)
+        // 创建时修改this bind
+    // const newfn=fn.bind(person)
+    // newfn(2,3)
+        // 箭头函数
+    const food={
+        name:'2',
+        eat(){
+            console.log(this)
+            setTimeout(()=>{
+                console.log(this)
+            })
+            // setTimeout(function(){
+            //     console.log(this)//window
+            // },1000)
+        }
+    }
+    food.eat()
+</script>

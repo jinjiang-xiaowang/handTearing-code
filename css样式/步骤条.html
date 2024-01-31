@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<style type="text/css">
+    .cssNav li{
+    	position: relative;
+        display: inline-block;
+        padding: 0 20px;
+        color: #fff;
+        background: #50abe4;
+        line-height: 40px;
+    }
+    .cssNav li:after{
+        content: "";
+        position: absolute;
+        right: -20px;
+        top: 0;
+        z-index: 10;
+        display: block;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-left: 20px solid #50abe4;
+    }
+    .cssNav li:before{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-left: 20px solid #fff;
+    }
+
+    .cssNav li:first-child:before{
+        display: none;
+    }
+
+    .cssNav li:last-child:after {
+        display: none;
+    }
+    
+    .cssNav li:hover {
+        background-color: #ef72b6;
+    }
+
+    .cssNav li:hover:after {
+        border-left-color: #ef72b6;
+    }
+</style>
+</head>
+<body>
+<div class="box">
+    <ul class="cssNav">
+        <li>shouye</li>
+        <li>haha</li>
+        <li>heihei</li>
+        <li>heihei</li>
+    </ul>
+</div>
+<script>
+
+</script>
+</body>
+</html>
